@@ -9,7 +9,7 @@ $(document).ready( function() {
     })
   }
 
-  var API_URL = "http://domai.nr/api/json/search?client_id=chrome_extensionq="
+  var API_URL = "http://domai.nr/api/json/search?client_id=chrome_extension&q="
     , selected_domain
 
   $("#search-form").submit( function(ev) {

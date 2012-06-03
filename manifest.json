@@ -1,17 +1,16 @@
 {
-	"name"			: 		"Domai.nr Search",
-	"version"		: 		"2.1"   			   ,
-	"description"	: 	"Give your domains a happy ending.",
-	"browser_action": 		{
-	  	"default_icon"	: 	"icon.png"
-		, "popup"			: 	"domainr.html"
+	"name" : "Domainr",
+	"version" : "1.0"   			   ,
+	"description"	: "Worldwide domain search",
+	"browser_action": {
+	  	"default_icon" : "icon.png"
+		, "popup" : "domainr.html"
 	},
-	"icons"			: 		{
-	  	"128"			: 	"icon_128.png"
+	"icons" : {
+	  	"128" : "icon_128.png"
 	},
 	"permissions": [
-	    "http://domai.nr"
-	  , "http://domai.nr/*"
+	    "http://domai.nr/*"
     , "unlimitedStorage"
     , "tabs"
 	]
