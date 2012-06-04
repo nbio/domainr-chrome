@@ -21,11 +21,11 @@ $(document).ready( function() {
     $.getJSON(API_URL + query, null, function(response) {
 
       $("#results-list").empty()
-      if ($("#search-query").length) {
-        $("#search-query").text(query)
-      } else {
-        $("<p id='search-query'>" + query + "</p>").insertBefore("#results")
-      }
+      // if ($("#search-query").length) {
+        // $("#search-query").text(query)
+      // } else {
+        // $("<p id='search-query'>" + query + "</p>").insertBefore("#results")
+      //}
       $.each(response.results,function(i, result){
         $("#results-list").append("<li class='" + result.availability + "'><a href='http://domai.nr/" + query + "'><span class='bg'></span><span class='domain'>" + result.domain + "</span></a></li>")
       })
@@ -88,7 +88,13 @@ $(document).ready( function() {
 
     if (ev.keyCode === 13) {
       if ($(this).val() === previous_search) {
-        var url = $(".selected a").attr('href') + "/with/" + $(".selected a").text()
+        var url;
+        if ($(".selected a").length > 0) {
+          url = $(".selected a").attr('href') + "/with/" + $(".selected a").text()
+        }
+        else {
+          url = "http://domai.nr/" + $("#query").val()
+        }
         createChromeTab(url)
 
       }
@@ -102,7 +108,6 @@ $(document).ready( function() {
 
     else {
       $("#results-list").empty()
-      $("#search-query").text('')
     }
 
   })
