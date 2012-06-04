@@ -69,30 +69,40 @@ $(document).ready( function() {
 
   $("#query").keydown( function(ev) {
     if (ev.keyCode === 38 || ev.keyCode === 40) {
+      ev.preventDefault()
       if (ev.keyCode === 38) {
         moveSelectionUp();
       } else {
         moveSelectionDown();
       }
     }
+  })
 
-    else if (ev.keyCode === 13) {
+  $("#query").keyup( function(ev) {
+    window.clearTimeout(t)
 
+    if (ev.keyCode === 38 || ev.keyCode === 40) {
+      ev.preventDefault();
+      return true;
+    }
+
+    if (ev.keyCode === 13) {
       if ($(this).val() === previous_search) {
         var url = $(".selected a").attr('href') + "/with/" + $(".selected a").text()
         createChromeTab(url)
 
       }
-
     }
 
-    else {
-
-      window.clearTimeout(t)
+    else if ( $(this).val().length > 0 ) {
       var t = window.setTimeout( function() {
         $("#search-form").submit()
       }, 200)
+    }
 
+    else {
+      $("#results-list").empty()
+      $("#search-query").text('')
     }
 
   })
