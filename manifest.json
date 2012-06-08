@@ -1,7 +1,7 @@
 {
 	"name" : "Domainr",
-	"version" : "1.0.1",
-	"description"	: "Worldwide domain search",
+	"version" : "3.0.0",
+	"description"	: "Worldwide domain search.",
 	"browser_action": {
 	  	"default_icon" : "icon.png"
 		, "popup" : "domainr.html"
