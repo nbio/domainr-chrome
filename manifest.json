@@ -13,6 +13,7 @@
 	},
 	"permissions": [
 	    "http://domai.nr/*"
+	  , "https://domai.nr/*"
     , "tabs"
 	]
 }

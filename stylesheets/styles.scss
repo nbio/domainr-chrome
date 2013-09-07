@@ -1,3 +1,4 @@
+
 body {
     overflow-x: hidden;
     font: normal 14px/18px helvetica, arial, sans-serif;
@@ -5,6 +6,7 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     width:  250px;
+    height: 66px;
 }
 
 .input-wrapper {
@@ -52,11 +54,9 @@ body {
 
 ul {
     display: block;
-    margin-top: 10px;
     clear: both;
     margin: 0;
     padding: 0;
-    margin-top: 10px;
 
     li {
       font-size: 15px;
@@ -115,6 +115,15 @@ ul {
         cursor: pointer;
       }
 
+      &:active, &.selected:active {
+        background: url("../images/blue.png") no-repeat left top;
+        cursor: pointer;
+
+        a {
+          color: #fff;
+        }
+      }
+
    }
 }
 
@@ -142,6 +151,7 @@ ul li a.active {
 #left {
     float: left;
     width: 250px;
+    padding-bottom: 10px;
 }
 
 .register-stuff { overflow: hidden }
@@ -153,6 +163,14 @@ ul li a.active {
     margin-right: 70px;
 }
 
+#load-more {
+    color: #6C9DC9;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+abbr { float: left }
+
 #footer {
     overflow: hidden;
     font-size: 11px;
@@ -160,7 +178,6 @@ ul li a.active {
     height: 20px;
     clear: both;
     margin-right: 15px;
-    margin-top: 5px;
 }
 
 #footer p {
