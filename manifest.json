@@ -12,8 +12,8 @@
 	  	"128" : "icon_128.png"
 	},
 	"permissions": [
-	    "http://domai.nr/*"
-	  , "https://domai.nr/*"
+	    "http://domainr.com/*"
+	  , "https://domainr.com/*"
     , "tabs"
 	]
 }
