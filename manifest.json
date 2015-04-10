@@ -1,6 +1,6 @@
 {
 		"name" : "Domainr"
-	, "version" : "3.0.2"
+	, "version" : "3.0.3"
 	, "manifest_version" : 2
 	, "description"	: "Worldwide domain search."
 	, "browser_action": {
