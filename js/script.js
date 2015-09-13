@@ -8,7 +8,7 @@ $(document).ready( function() {
     })
   }
 
-  var API_URL = "https://api.domainr.com/v1/search?client_id=chrome_extension&q="
+  var API_URL = "https://api.domainr.com/v1/search?client_id={your-mashape-key}&q="
     , selected_domain
 
   $("#search-form").submit( function(evt) {
