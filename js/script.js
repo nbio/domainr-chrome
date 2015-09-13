@@ -8,7 +8,7 @@ $(document).ready( function() {
     })
   }
 
-  var API_URL = "https://api.domainr.com/v1/search?client_id={your-mashape-key}&q="
+  var API_URL = "https://api.domainr.com/v1/search?client_id=chrome_extension&q="
     , selected_domain
 
   $("#search-form").submit( function(evt) {
@@ -84,7 +84,7 @@ $(document).ready( function() {
       var val = $(this).val();
       var $selected = $(".selected");
       if ($selected.length) {
-        var url = $(".selected a").attr('href') + "/with/" + $(".selected a").text();
+        var url = $(".selected a").attr('href');
         createChromeTab(url);
       }
       return false;
@@ -99,8 +99,8 @@ $(document).ready( function() {
   });
 
   $("#results-list li a").live('click', function(ev) {
-    var url = $(this).attr('href')
-    createChromeTab(url)
+    var url = $(this).attr('href');
+    createChromeTab(url);
   });
 
 })
