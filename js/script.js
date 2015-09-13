@@ -32,7 +32,7 @@ $(document).ready( function() {
           $("<p id='search-query'>" + query + "</p>").insertBefore("#results")
         }
         $.each(response.results,function(i, result){
-          $("#results-list").append("<li class='" + result.availability + "'><a href='https://domainr.com/" + query + "'><span class='bg'></span><span class='domain'>" + result.domain + "</span></a></li>")
+          $("#results-list").append("<li class='" + result.availability + "'><a href='https://domainr.com/" + result.domain + '?q=' + query + "'><span class='bg'></span><span class='domain'>" + result.domain + "</span></a></li>")
         })
         $("#loader").css('visibility', 'hidden');     // hide the spinny thingy.
       });
@@ -99,7 +99,7 @@ $(document).ready( function() {
   });
 
   $("#results-list li a").live('click', function(ev) {
-    var url = $(this).attr('href') + "/with/" + $(this).text()
+    var url = $(this).attr('href')
     createChromeTab(url)
   });
 
