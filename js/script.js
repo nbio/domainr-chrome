@@ -101,6 +101,7 @@ $(document).ready( function() {
   $("#results-list li a").live('click', function(ev) {
     var url = $(this).attr('href') + "/with/" + $(this).text()
     createChromeTab(url)
+    ev.preventDefault();
   });
 
 })
