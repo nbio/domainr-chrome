@@ -10,6 +10,7 @@ var openBrowser = require('opener');
 var minifyCss = require('gulp-minify-css');
 
 var dest = './build/';
+var apiKey = process.env.DOMAINR_CHROME_API_KEY;
 
 // ----------
 gulp.task('serve', ['watch'], function() {
@@ -36,7 +37,7 @@ gulp.task('js', function() {
   return gulp.src(scripts)
     .pipe(uglify())
     .pipe(concat('script.js'))
-    .pipe(replace(/{your-clientid-goes-here}/g, 'domainr-chrome'))
+    .pipe(replace(/{your-api-key-goes-here}/g, apiKey))
     .pipe(gulp.dest(dest));
 });
 

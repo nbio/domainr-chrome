@@ -1,3 +1,5 @@
+'use strict';
+
 (function() {
 
   var createChromeTab = function(url) {
@@ -11,7 +13,7 @@
 
   new domainr.SearchBox({
     observe: _in,
-    clientId: '{your-clientid-goes-here}',
+    clientId: '{your-api-key-goes-here}',
     renderTo: _results,
     limit: 10,
     onSelect: function(result) {

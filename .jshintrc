@@ -4,6 +4,7 @@
   "globals": {
     "domainr": true,
     "module": true,
-    "require": true
+    "require": true,
+    "chrome": true
   }
 }
