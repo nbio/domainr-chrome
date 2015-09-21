@@ -5,6 +5,7 @@ var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var replace = require('gulp-replace');
+var gulpif = require('gulp-if');
 var del = require('del');
 var httpServer = require('http-server');
 var openBrowser = require('opener');
@@ -36,7 +37,9 @@ gulp.task('js', function() {
   ];
 
   return gulp.src(scripts)
-    .pipe(uglify())
+    .pipe(gulpif(function(file) {
+      return !(/domainr-search-box/).test(file.path);
+    }, uglify()))
     .pipe(concat('script.js'))
     .pipe(replace(/{your-api-key-goes-here}/g, apiKey))
     .pipe(gulp.dest(dest));
@@ -50,7 +53,9 @@ gulp.task('css', function() {
   ];
 
   return gulp.src(styles)
-    .pipe(minifyCss())
+    .pipe(gulpif(function(file) {
+      return !(/domainr-search-box/).test(file.path);
+    }, minifyCss()))
     .pipe(concat('styles.css'))
     .pipe(gulp.dest(dest));
 });
