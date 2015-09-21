@@ -5,6 +5,7 @@ var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var replace = require('gulp-replace');
+var del = require('del');
 var httpServer = require('http-server');
 var openBrowser = require('opener');
 var minifyCss = require('gulp-minify-css');
@@ -55,7 +56,14 @@ gulp.task('css', function() {
 });
 
 // ----------
-gulp.task('build', ['js', 'css']);
+gulp.task('clean', function () {
+  return del([
+    'build/**/*'
+  ]);
+});
+
+// ----------
+gulp.task('build', ['clean', 'js', 'css']);
 
 // ----------
 gulp.task('default', ['serve']);
