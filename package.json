@@ -4,7 +4,7 @@
   "description": "Chrome Extension for Domainr.",
   "dependencies": {
     "del": "^2.0.2",
-    "domainr-search-box": "^0.0.7",
+    "domainr-search-box": "^0.0.8",
     "gulp": "^3.8.11",
     "gulp-concat": "^2.6.0",
     "gulp-if": "^1.2.5",
