@@ -1,31 +1,23 @@
-<!DOCTYPE html>  
+<!DOCTYPE html>
 <html lang="en">
   <head>
-      <meta charset="utf-8">
-      <title>Domainr Chrome Extension</title>
-      <link rel="stylesheet" href="stylesheets/built.min.css" />
+    <meta charset="utf-8">
+    <title>Domainr Chrome Extension</title>
+    <link rel="stylesheet" href="build/styles.css" />
   </head>
   <body id="container">
     <div id="left">
       <form id="search-form">
         <div class="input-wrapper">
-          <input type="text" id="query" />
-          <img id="loader" src="images/loading.gif" />
+          <input type="text" id="query" autocomplete="off" autofocus autocapitalize="off" autocorrect="off" />
         </div>
-          <input type="submit" id="button" class="button" value="Search" alt="Loading" />
       </form>
       <div id="results">
-        <ul id="results-list">
-          <!-- this gets populated -->
-        </ul>
       </div>
     </div>
-
     <div id="footer">
       <p>Powered by <a href="https://domainr.com/" target="_blank" alt="Domainr">Domainr</a></p>
     </div>
-
-      <script src="js/jquery.min.js"></script>
-      <script src="js/script.js"></script>  
-    </body>
+    <script src="build/script.js"></script>
+  </body>
 </html>
